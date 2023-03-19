@@ -43,18 +43,13 @@ def main():
 
     elif "F" in text:
         filename=input()
-        file='./test/'+filename
-        if "a" not in filename:
-            try:
-                with open(file) as fails:
-                    garums=int(fails.readline())
-                    data=list(map(int, fails.readline().split()))
-            except Exception as e:
-                print("Error:", str(e))
-                return
-        else:
-            print("Error: invalid filename")
-            return
+        with open("test/"+filename, 'r') as fails:
+            garums=int(fails.readline())
+            data=list(map(int, fails.readline().split()))
+
+    else:
+        print("Error")
+        return
     # checks if lenght of data is the same as the said lenght
     assert len(data) == garums
 
