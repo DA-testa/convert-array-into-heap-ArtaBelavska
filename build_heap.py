@@ -43,9 +43,9 @@ def main():
 
     elif "F" in text:
         filename=input()
-        with open("test/"+filename, 'r') as fails:
-            garums=int(fails.readline())
-            data=list(map(int, fails.readline().split()))
+        with open("tests/"+filename,'r')as f:
+            garums=int(f.readline())
+            data=list(map(int, f.readline().split()))
 
     else:
         print("Error")
